@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Student Management System
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+
+        <h1 class="mb-4">
+            Student Management System
+        </h1>
+<!-- Add Department -->
+
+<section class="mb-5">
+
+    <h2>Add Department</h2>
+
+    <form id="departmentForm">
+
+        <input
+            type="text"
+            id="departmentName"
+            class="form-control"
+            placeholder="Department Name">
+
+        <button
+            type="submit"
+            class="btn btn-primary mt-2">
+            Add Department
+        </button>
+
+    </form>
+    <!-- Add Student -->
+
+<section class="mb-5">
+
+    <h2>Add Student</h2>
+
+    <form id="studentForm">
+
+        <input
+            type="text"
+            id="studentName"
+            class="form-control mb-2"
+            placeholder="Student Name">
+
+        <input
+            type="number"
+            id="studentAge"
+            class="form-control mb-2"
+            placeholder="Age">
+
+        <select
+            id="departmentSelect"
+            class="form-select">
+
+            <option value="">
+                Select Department
+            </option>
+
+        </select>
+
+        <button
+            type="submit"
+            class="btn btn-success mt-2">
+            Add Student
+        </button>
+
+    </form>
+
+    <div id="studentFormMessage"></div>
+
+</section>
+
+    <div id="departmentMessage"></div>
+
+</section>
+
+        <!-- Search -->
+        <div class="mb-4">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Search student">
+
+            <button
+                class="btn btn-primary mt-2"
+                onclick="searchStudents()">
+                Search
+            </button>
+
+            <button
+                class="btn btn-secondary mt-2"
+                onclick="loadStudents()">
+                Clear
+            </button>
+
+        </div>
+
+
+        <!-- Students -->
+        <section>
+
+            <h2>Students</h2>
+
+            <div id="studentMessage"></div>
+
+            <table class="table table-bordered table-striped">
+
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Department</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentsTableBody">
+
+                </tbody>
+
+            </table>
+
+            <button
+                class="btn btn-success"
+                onclick="loadStudents()">
+                Refresh
+            </button>
+
+        </section>
+
+
+        <!-- Departments -->
+        <section class="mt-5">
+
+            <h2>Departments</h2>
+
+            <div id="departmentsList">
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
